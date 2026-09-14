@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Left Sidebar: Navigation & Tasks -->
+        <aside class="sidebar panel active-border">
+            <div class="dropdown-container">
+                <select class="automata-select">
+                    <option>Deterministic Finite Automata</option>
+                    <option>Non-Deterministic Finite Automata</option>
+                    <option>Pushdown Automata</option>
+                </select>
+            </div>
+            
+            <div class="tasks-header">
+                <h2>Tasks</h2>
+                <div class="stars">
+                    <span>★</span><span>★</span><span>★</span>
+                </div>
+            </div>
+
+            <div class="task-list">
+                
+            </div>
+        </aside>
+
+        <!-- Middle Column: Context & Testing -->
+        <section class="info-column">
+            <!-- Instructions Panel -->
+            <div class="panel instructions">
+                <h3 class="panel-title">Instructions</h3>
+                <h4 class="task-title">First Program</h4>
+                <p>For your first program, you need to write an automaton that is able to match any text that has an <strong>'a'</strong> or has a <strong>'b'</strong> in it.</p>
+                <p>Drag states onto the board and connect them to build your logic.</p>
+            </div>
+
+            <!-- Test Cases Panel -->
+            <div class="panel test-cases">
+                <h3 class="panel-title">Test Cases:</h3>
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>Input</th>
+                            <th>Expected</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+        </section>
+
+        <!-- Right Column: Workspace -->
+        <main class="workspace-column">
+            <div class="editor-row">
+                <!-- Main Editor Panel -->
+                <div class="panel editor">
+                    <div class="editor-toolbar">
+                        <div class="tool-group">
+                            <button class="icon-btn active" type="button" data-editor-mode="select" title="Select and move">&#9654;</button>
+                            <button class="icon-btn" type="button" data-editor-mode="connect" title="Draw connection">&#8594;</button>
+                            <button class="icon-btn" type="button" data-editor-mode="pan" title="Pan canvas">&#10021;</button>
+                        </div>
+                        <div class="tool-group">
+                            <button class="icon-btn" type="button" data-editor-action="add-node" title="Add node">+</button>
+                            <button class="icon-btn" type="button" data-editor-action="fit" title="Fit graph">&#9711;</button>
+                            <button class="icon-btn" type="button" data-editor-action="import" title="Import solution">&#8593;</button>
+                            <button class="icon-btn" type="button" data-editor-action="export" title="Export solution">&#8595;</button>
+                            <input class="solution-file-input" type="file" accept="application/json,.json" hidden>
+                        </div>
+                        <span class="zoom-readout">100%</span>
+                    </div>
+                    <div class="canvas-viewport">
+                        <svg class="graph-canvas" aria-label="DFA editor" tabindex="0">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                                    <path d="M0,0 L8,4 L0,8 z" fill="var(--accent-primary)"></path>
+                                </marker>
+                            </defs>
+                            <g class="graph-world"></g>
+                        </svg>
+                        <div class="execution-display" aria-live="polite" hidden></div>
+                        <div class="canvas-hint">Double-click to add a node · drag between nodes to connect</div>
+                    </div>
+                </div>
+
+                <aside class="panel inspector" aria-label="Selection inspector">
+                    <div class="inspector-heading">
+                        <div>
+                            <span class="eyebrow">Properties</span>
+                            <h3 class="inspector-title">No selection</h3>
+                        </div>
+                        <button class="icon-btn delete-selection" type="button" title="Delete selection" disabled>&#9003;</button>
+                    </div>
+                    <div class="inspector-empty">Select a node or connection<br>to edit its values.</div>
+                    <form class="inspector-form" hidden></form>
+                </aside>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="panel controls">
+                <div class="playback-buttons">
+                    <button class="btn btn-play">▶ Play</button>
+                    <button class="btn btn-step">⏭ Step</button>
+                    <button class="btn btn-finish">✓ Finish</button>
+                    <button class="btn btn-reset">↺ Reset</button>
+                </div>
+                <div class="execution-status">
+                    <span class="label">remaining:</span>
+                    <span class="current-string">Not run</span>
+                    <span class="label">next:</span>
+                    <span class="next-character">-</span>
+                    <span class="label">handled:</span>
+                    <span class="handled-character">-</span>
+                    <span class="label">node:</span>
+                    <span class="current-node">-</span>
+                    <span class="execution-error" role="status"></span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>

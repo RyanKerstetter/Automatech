@@ -1,0 +1,452 @@
+[
+    {
+        "group_name" : "Introduction",
+        "tasks" : [
+            {
+                "task_name" : "First Program",
+                "task_id" : "dfa-introduction-first_progam",
+                "description" : "For your first program, you need to write an automaton that is able to match any text that has an 'a' or has a 'b' in it. Drag states onto the board and connect them to build your logic.",
+                "test_cases" : [
+                    { "input": "dog", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "xyz", "accept_type": "deny" },
+                    { "input": "12345!@", "accept_type": "deny" },
+                    { "input": "python", "accept_type": "deny" },
+                    { "input" : "Hello", "accept_type":"deny"},
+                    { "input" : "Hello World", "accept_type":"deny"},
+                    { "input" : "Hola", "accept_type":"accept"},
+                    { "input" : "Bunny", "accept_type":"accept"},
+                    { "input": "apple", "accept_type": "accept" },
+                    { "input": "banana", "accept_type": "accept" },
+                    { "input": "coda", "accept_type": "accept" },
+                    { "input": "web", "accept_type": "accept" },
+                    { "input": "cat", "accept_type": "accept" },
+                    { "input": "a", "accept_type": "accept" },
+                    { "input": "b", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Even Steven",
+                "task_id": "dfa-introduction-even_steven",
+                "description": "Accept strings whose total length is an even number (0, 2, 4, 6, etc.), and deny strings with an odd length.",
+                "test_cases": [
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "odd", "accept_type": "deny" },
+                    { "input": "12345", "accept_type": "deny" },
+                    { "input": "seven!!", "accept_type": "deny" },
+                    { "input": "", "accept_type": "accept" },
+                    { "input": "hi", "accept_type": "accept" },
+                    { "input": "10", "accept_type": "accept" },
+                    { "input": "even", "accept_type": "accept" },
+                    { "input": "101010", "accept_type": "accept" },
+                    { "input": "two words!", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The Toll Booth",
+                "task_id": "dfa-introduction-toll_booth",
+                "description": "Accept any string that is exactly 3 characters long, and deny strings of any other length.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "no", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "four", "accept_type": "deny" },
+                    { "input": "way too long", "accept_type": "deny" },
+                    { "input": "yes", "accept_type": "accept" },
+                    { "input": "101", "accept_type": "accept" },
+                    { "input": "abc", "accept_type": "accept" },
+                    { "input": "a b", "accept_type": "accept" },
+                    { "input": "333", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "No Consecutive Ones",
+                "task_id": "dfa-introduction-no_consecutive_ones",
+                "description": "Write an automaton that accepts any binary string ('0's and '1's) as long as it never contains two '1's in a row (the substring '11' is strictly forbidden). Empty strings are allowed.",
+                "test_cases": [
+                    { "input": "", "accept_type": "accept" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "1", "accept_type": "accept" },
+                    { "input": "010", "accept_type": "accept" },
+                    { "input": "101010", "accept_type": "accept" },
+                    { "input": "00000", "accept_type": "accept" },
+                    { "input": "1001001", "accept_type": "accept" },
+                    { "input": "11", "accept_type": "deny" },
+                    { "input": "011", "accept_type": "deny" },
+                    { "input": "110", "accept_type": "deny" },
+                    { "input": "10110", "accept_type": "deny" },
+                    { "input": "111", "accept_type": "deny" },
+                    { "input": "0101011", "accept_type": "deny" }
+                ]
+            },
+            {
+                "task_name": "A Good Laugh",
+                "task_id": "dfa-assignments-a_good_laugh",
+                "description": "Write an automaton that matches a valid laughing text. A valid laugh consists of alternating 'h' and 'a' characters (case-insensitive), starting with an 'H' or 'h'. It must contain at least two 'ha' syllables (e.g., 'haha', 'hahaha'). It is also allowed to end with a trailing 'h' (e.g., 'hahahah'). Deny strings that are too short (like 'ha'), start with an 'a', have consecutive identical letters (like 'hha' or 'haa'), or contain spaces/punctuation.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "h", "accept_type": "deny" },
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "ha", "accept_type": "deny" },
+                    { "input": "HA", "accept_type": "deny" },
+                    { "input": "hah", "accept_type": "deny" },
+                    { "input": "ah", "accept_type": "deny" },
+                    { "input": "ahah", "accept_type": "deny" },
+                    { "input": "haah", "accept_type": "deny" },
+                    { "input": "hhaa", "accept_type": "deny" },
+                    { "input": "hahahah", "accept_type": "deny" },
+                    { "input": "hahahahaa", "accept_type": "deny" },
+                    { "input": "haha!", "accept_type": "deny" },
+                    { "input": "ha ha", "accept_type": "deny" },
+                    { "input": "haha", "accept_type": "accept" },
+                    { "input": "HAHA", "accept_type": "accept" },
+                    { "input": "HaHa", "accept_type": "accept" },
+                    { "input": "hahaha", "accept_type": "accept" },
+                    { "input": "Hahahaha", "accept_type": "accept" },
+                    { "input": "HAHAHAHA", "accept_type": "accept" },
+                    { "input": "hAhAhA", "accept_type": "accept" },
+                    { "input": "hahahahahaha", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Valid Integer",
+                "task_id": "dfa-introduction-valid_integer",
+                "description": "Write an automaton that accepts strings representing a valid signed or unsigned integer (digits 0-9, optionally preceded by a single '+' or '-' sign)",
+                "test_cases": [
+                    { "input": "3.14", "accept_type": "deny" },
+                    { "input": "-abc", "accept_type": "deny" },
+                    { "input": "--5", "accept_type": "deny" },
+                    { "input": "123a", "accept_type": "deny" },
+                    { "input": "+", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "42", "accept_type": "accept" },
+                    { "input": "-105", "accept_type": "accept" },
+                    { "input": "+0", "accept_type": "accept" },
+                    { "input": "0", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Isolate the Unicorn",
+                "task_id": "dfa-introduction-unicorn",
+                "description": "Write an automaton that accept any strings containing the word xylophone and denies everything else",
+                "test_cases": [
+                    { "input": "marimba", "accept_type": "deny" },
+                    { "input": "xylo-phone", "accept_type": "deny" },
+                    { "input": "He played the tambourine", "accept_type": "deny" },
+                    { "input": "hjireqwihxylophoneqeeqwqew", "accept_type": "accept" },
+                    { "input": "xXx_xylophone_xXx", "accept_type": "accept" },
+                    { "input": "Play the xylophone today", "accept_type": "accept" },
+                    { "input": "nonxylophone", "accept_type": "accept" },
+                    { "input": "Xylophones", "accept_type": "accept" },
+                    { "input": "My xylophone is loud", "accept_type": "accept" }
+                ]
+            }
+        ]
+    },
+    {
+        "group_name": "Assignments",
+        "tasks": [
+            {
+                "task_name": "Mind the Gap",
+                "task_id": "dfa-assignments-cat",
+                "description": "Write an automaton that isolates the word 'cat' as a standalone word. It must accept sentences where 'cat' appears surrounded by spaces, punctuation, or string boundaries, but deny words where 'cat' is embedded inside a larger word (like 'caterpillar' or 'bobcat').",
+                "test_cases": [
+                    { "input": "concatenate", "accept_type": "deny" },
+                    { "input": "scatter", "accept_type": "deny" },
+                    { "input": "cats", "accept_type": "deny" },
+                    { "input": "tomcat", "accept_type": "deny" },
+                    { "input": "A bobcat appeared", "accept_type": "deny" },
+                    { "input": "caterpillar", "accept_type": "deny" },
+                    { "input": "Look at that cat!", "accept_type": "accept" },
+                    { "input": "cat.", "accept_type": "accept" },
+                    { "input": "Is that a cat?", "accept_type": "accept" },
+                    { "input": "cat and dog", "accept_type": "accept" },
+                    { "input": "The cat sat", "accept_type": "accept" },
+                    { "input": "cat", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The Bookends",
+                "task_id": "dfa-assignments-the_bookends",
+                "description": "Accept strings that both start and end with the same binary number ie '0' or '1'. Deny everything else.",
+                "test_cases": [
+                    { "input": "aweea", "accept_type": "deny" },
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "racecar", "accept_type": "deny" },
+                    { "input": "01", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "0hello", "accept_type": "deny" },
+                    { "input": "world1", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "1", "accept_type": "accept" },
+                    { "input": "00", "accept_type": "accept" },
+                    { "input": "11", "accept_type": "accept" },
+                    { "input": "0hwer0", "accept_type": "accept" },
+                    { "input": "1and some text1", "accept_type": "accept" },
+                    { "input": "01010", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Decimal Divisble by 3",
+                "task_id": "dfa-assignments-decimal_mod_3",
+                "description": "Accept strings of decimal digits (0-9) where the number is divisble by 3. Reject empty strings or strings containing letters/symbols.",
+                "test_cases": [
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "4", "accept_type": "deny" },
+                    { "input": "13", "accept_type": "deny" },
+                    { "input": "22", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "25", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "3", "accept_type": "accept" },
+                    { "input": "12", "accept_type": "accept" },
+                    { "input": "111", "accept_type": "accept" },
+                    { "input": "909", "accept_type": "accept" },
+                    { "input": "45", "accept_type": "accept" },
+                    { "input": "234", "accept_type": "accept" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "9999", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Binary Divisible by 3",
+                "task_id": "dfa-assignments-binary_mod_3",
+                "description": "Write an automaton that reads a binary string (consisting only of '0's and '1's) and accepts it if the base-2 number it represents is a multiple of 3.",
+                "test_cases": [
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "100", "accept_type": "deny" },
+                    { "input": "101", "accept_type": "deny" },
+                    { "input": "111", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "11", "accept_type": "accept" }, 
+                    { "input": "110", "accept_type": "accept" }, 
+                    { "input": "1001", "accept_type": "accept" }, 
+                    { "input": "1111", "accept_type": "accept" },
+                    { "input": "10101", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Spelling Bee",
+                "task_id": "dfa-assignments-spelling_bee",
+                "description": "Write an automaton that accepts any string containing at least one 'b' and at least two 'e's anywhere in the text (meaning you could extract the letters to spell 'bee'), and denies everything else.",
+                "test_cases": [
+                    { "input": "The quick brown fox", "accept_type": "deny" },
+                    { "input": "submarine", "accept_type": "deny" },
+                    { "input": "maybe", "accept_type": "deny" },
+                    { "input": "excellent", "accept_type": "deny" },
+                    { "input": "rubber", "accept_type": "deny" },
+                    { "input": "A bear sleeps here", "accept_type": "accept" },
+                    { "input": "I bought some apples", "accept_type": "accept" },
+                    { "input": "blueberries", "accept_type": "accept" },
+                    { "input": "e b e", "accept_type": "accept" },
+                    { "input": "beef", "accept_type": "accept" },
+                    { "input": "believe", "accept_type": "accept" },
+                    { "input": "best before", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The A-3 B-2 Lock",
+                "task_id": "dfa-assignments-a3_b2",
+                "description": "Accept strings consisting entirely of the letters 'a' and 'b', where the total number of 'a's is a multiple of 3, AND the total number of 'b's is an even number. The empty string counts as 0 'a's and 0 'b's, which is valid.",
+                "test_cases": [
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "b", "accept_type": "deny" },
+                    { "input": "ab", "accept_type": "deny" },
+                    { "input": "aa", "accept_type": "deny" },
+                    { "input": "aab", "accept_type": "deny" },
+                    { "input": "abb", "accept_type": "deny" },
+                    { "input": "bbbaaa", "accept_type": "deny" },
+                    { "input": "", "accept_type": "accept" },
+                    { "input": "aaa", "accept_type": "accept" },
+                    { "input": "bb", "accept_type": "accept" },
+                    { "input": "aabba", "accept_type": "accept" },
+                    { "input": "bababab", "accept_type": "accept" },
+                    { "input": "bbbbaaa", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The Chaperone",
+                "task_id": "dfa-assignments-chaperone",
+                "description": "Write an automaton that reads a binary string where every '1' must be immediately followed by at least two '0's. Deny strings that end prematurely after a '1', contain consecutive '1's without the required '0's in between, or contain non-binary characters.",
+                "test_cases": [
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "11", "accept_type": "deny" },
+                    { "input": "010", "accept_type": "deny" },
+                    { "input": "10100", "accept_type": "deny" },
+                    { "input": "1001", "accept_type": "deny" },
+                    { "input": "", "accept_type": "accept" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "00", "accept_type": "accept" },
+                    { "input": "100", "accept_type": "accept" },
+                    { "input": "1000", "accept_type": "accept" },
+                    { "input": "0100100", "accept_type": "accept" },
+                    { "input": "1001000", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The Decoy",
+                "task_id": "dfa-assignments-decoy",
+                "description": "Write an automaton that reads a binary string and accepts all strings EXCEPT those that contain the exact contiguous substring '1011'",
+                "test_cases": [
+                    { "input": "1011", "accept_type": "deny" },
+                    { "input": "01011", "accept_type": "deny" },
+                    { "input": "10110", "accept_type": "deny" },
+                    { "input": "110111", "accept_type": "deny" },
+                    { "input": "101011", "accept_type": "deny" },
+                    { "input": "", "accept_type": "accept" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "1", "accept_type": "accept" },
+                    { "input": "101", "accept_type": "accept" },
+                    { "input": "1010", "accept_type": "accept" },
+                    { "input": "1101", "accept_type": "accept" },
+                    { "input": "10011", "accept_type": "accept" },
+                    { "input": "101010", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "The Rearview Mirror",
+                "task_id": "dfa-assignments-rearview_mirror",
+                "description": "Write an automaton that reads a string of 'a's and 'b's and accepts it only if the third-to-last character is an 'a'. Deny strings that are shorter than 3 characters, strings where the third-to-last character is a 'b', or strings with invalid characters.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "a", "accept_type": "deny" },
+                    { "input": "aa", "accept_type": "deny" },
+                    { "input": "baa", "accept_type": "deny" },
+                    { "input": "bbba", "accept_type": "deny" },
+                    { "input": "abab", "accept_type": "deny" },
+                    { "input": "baa", "accept_type": "deny" },
+                    { "input": "bab", "accept_type": "deny" },
+                    { "input": "abaa", "accept_type": "deny" },
+                    { "input": "abab", "accept_type": "deny" },
+                    { "input": "abba", "accept_type": "deny" },
+                    { "input": "bbab", "accept_type": "deny" },
+                    { "input": "bbba", "accept_type": "deny" },
+                    { "input": "bbbb", "accept_type": "deny" },
+                    { "input": "baaab", "accept_type": "accept" },
+                    { "input": "bbabb", "accept_type": "accept" },
+                    { "input": "aaba", "accept_type": "accept" },
+                    { "input": "aaaa", "accept_type": "accept" },
+                    { "input": "aaab", "accept_type": "accept" },
+                    { "input": "aaba", "accept_type": "accept" },
+                    { "input": "aabb", "accept_type": "accept" },
+                    { "input": "baba", "accept_type": "accept" },
+                    { "input": "bbbbbaaa", "accept_type": "accept" },
+                    { "input": "ababaaba", "accept_type": "accept" }
+                ]
+            }
+        ]
+    },
+    {
+        "group_name": "Mastery",
+        "tasks": [
+            {
+                "task_name": "The Float Inspector",
+                "task_id": "dfa-mastery-robust_float",
+                "description": "Write an automaton that validates floating-point numbers. It must accept numbers with optional signs ('+' or '-'), decimal points, and scientific notation using 'e' or 'E'. The number must contain at least one digit. Decimal points can lead or trail if a digit is present (e.g., '.5' or '1.'). Exponents must be followed by at least one digit, and can have their own optional sign. Deny multiple decimals, hanging exponents, misplaced signs, or invalid characters.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "+", "accept_type": "deny" },
+                    { "input": "-", "accept_type": "deny" },
+                    { "input": ".", "accept_type": "deny" },
+                    { "input": "+.", "accept_type": "deny" },
+                    { "input": "-.", "accept_type": "deny" },
+                    { "input": "e", "accept_type": "deny" },
+                    { "input": "E", "accept_type": "deny" },
+                    { "input": "1e", "accept_type": "deny" },
+                    { "input": "-2.5E", "accept_type": "deny" },
+                    { "input": "1.2e+", "accept_type": "deny" },
+                    { "input": "3e-", "accept_type": "deny" },
+                    { "input": "e6", "accept_type": "deny" },
+                    { "input": ".e5", "accept_type": "deny" },
+                    { "input": "1.2.3", "accept_type": "deny" },
+                    { "input": "1-2", "accept_type": "deny" },
+                    { "input": "1.+2", "accept_type": "deny" },
+                    { "input": "1e2-3", "accept_type": "deny" },
+                    { "input": "1e2.5", "accept_type": "deny" },
+                    { "input": "1,000.50", "accept_type": "deny" },
+                    { "input": "1.2 f", "accept_type": "deny" },
+                    
+                    { "input": "42", "accept_type": "accept" },
+                    { "input": "1.2", "accept_type": "accept" },
+                    { "input": "-1.3", "accept_type": "accept" },
+                    { "input": "+42.0", "accept_type": "accept" },
+                    { "input": "0.5", "accept_type": "accept" },
+                    { "input": ".5", "accept_type": "accept" },
+                    { "input": "-.99", "accept_type": "accept" },
+                    { "input": "1.", "accept_type": "accept" },
+                    { "input": "+2.", "accept_type": "accept" },
+                    { "input": "1e6", "accept_type": "accept" },
+                    { "input": "1.2e3", "accept_type": "accept" },
+                    { "input": "-3.14e-10", "accept_type": "accept" },
+                    { "input": "+0.5E+2", "accept_type": "accept" },
+                    { "input": "10e+5", "accept_type": "accept" },
+                    { "input": ".5e2", "accept_type": "accept" },
+                    { "input": "-.2E-4", "accept_type": "accept" },
+                    { "input": "1.e-3", "accept_type": "accept" },
+                    { "input": "007.000", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Substring Conflict",
+                "task_id": "dfa-mastery-substring_conflict",
+                "description": "Write an automaton that accepts a binary string only if it contains the contiguous substring '101' AND does NOT contain the contiguous substring '010' anywhere in the text.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "0", "accept_type": "deny" },
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "010", "accept_type": "deny" },
+                    { "input": "1010", "accept_type": "deny" },
+                    { "input": "10101", "accept_type": "deny" },
+                    { "input": "00101", "accept_type": "deny" },
+                    { "input": "11010", "accept_type": "deny" },
+                    { "input": "01011", "accept_type": "deny" },
+                    { "input": "00000", "accept_type": "deny" },
+                    { "input": "11111", "accept_type": "deny" },
+                    { "input": "101", "accept_type": "accept" },
+                    { "input": "1011", "accept_type": "accept" },
+                    { "input": "1101", "accept_type": "accept" },
+                    { "input": "01101", "accept_type": "accept" },
+                    { "input": "101100", "accept_type": "accept" },
+                    { "input": "1110111", "accept_type": "accept" },
+                    { "input": "0011011", "accept_type": "accept" },
+                    { "input": "101111", "accept_type": "accept" }
+                ]
+            },
+            {
+                "task_name": "Ternary Divisible by 5",
+                "task_id": "dfa-mastery-ternary_mod_5",
+                "description": "Write an automaton that reads a ternary string (digits '0', '1', and '2') and accepts it if the base-3 number it represents is divisible by 5.",
+                "test_cases": [
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "1", "accept_type": "deny" },
+                    { "input": "2", "accept_type": "deny" },
+                    { "input": "10", "accept_type": "deny" },
+                    { "input": "11", "accept_type": "deny" },
+                    { "input": "20", "accept_type": "deny" },
+                    { "input": "21", "accept_type": "deny" },
+                    { "input": "22", "accept_type": "deny" },
+                    { "input": "100", "accept_type": "deny" },
+                    { "input": "102", "accept_type": "deny" },
+                    { "input": "111", "accept_type": "deny" },
+                    { "input": "0", "accept_type": "accept" },
+                    { "input": "12", "accept_type": "accept" },
+                    { "input": "101", "accept_type": "accept" },
+                    { "input": "120", "accept_type": "accept" },
+                    { "input": "202", "accept_type": "accept" },
+                    { "input": "221", "accept_type": "accept" },
+                    { "input": "1010", "accept_type": "accept" },
+                    { "input": "1022", "accept_type": "accept" },
+                    { "input": "1111", "accept_type": "accept" },
+                    { "input": "1200", "accept_type": "accept" }
+                ]
+            }
+        ]
+    }
+]
