@@ -37,8 +37,7 @@
             <div class="panel instructions">
                 <h3 class="panel-title">Instructions</h3>
                 <h4 class="task-title">First Program</h4>
-                <p>For your first program, you need to write an automaton that is able to match any text that has an <strong>'a'</strong> or has a <strong>'b'</strong> in it.</p>
-                <p>Drag states onto the board and connect them to build your logic.</p>
+                <p class="task-description">For your first program, you need to write an automaton that is able to match any text that has an <strong>'a'</strong> or has a <strong>'b'</strong> in it.</p>
             </div>
 
             <!-- Test Cases Panel -->
@@ -87,7 +86,7 @@
                             <g class="graph-world"></g>
                         </svg>
                         <div class="execution-display" aria-live="polite" hidden></div>
-                        <div class="canvas-hint">Double-click to add a node · drag between nodes to connect</div>
+                        <div class="canvas-hint">Double-click to add a node · shift drag between nodes to connect</div>
                     </div>
                 </div>
 
@@ -101,6 +100,13 @@
                     </div>
                     <div class="inspector-empty">Select a node or connection<br>to edit its values.</div>
                     <form class="inspector-form" hidden></form>
+
+                    <div class="editor-help">
+                        <h4 class="editor-help-header">Editor Instructions</h4>
+                        <p>Double click to create new nodes and shift drag to connect nodes.</p>
+                        <p>The automata will read one character at a time, and if one of its arrows matches the read character, it will move to the new node. If none match it will take the '^' path. Note: if a node doesn't match the character or have a '^' path it will error.</p>
+                        <p>To determine if the string is accepted it checks the final node selected when the string is done. If it is accepting it will accept otherwise deny.</p>
+                    </div>
                 </aside>
             </div>
 

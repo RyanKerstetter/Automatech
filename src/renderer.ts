@@ -108,7 +108,7 @@ function render_test_cases(): void {
     }
 
     const title = document.querySelector<HTMLElement>(".task-title");
-    const description = document.querySelector<HTMLElement>(".instructions p");
+    const description = document.querySelector<HTMLElement>(".task-description");
     if (title) {
         title.textContent = selected_task.task_name;
     }

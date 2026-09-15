@@ -3,32 +3,31 @@
         "group_name" : "Introduction",
         "tasks" : [
             {
-                "task_name" : "First Program",
-                "task_id" : "dfa-introduction-first_progam",
-                "description" : "For your first program, you need to write an automaton that is able to match any text that has an 'a' or has a 'b' in it. Drag states onto the board and connect them to build your logic.",
-                "test_cases" : [
-                    { "input": "dog", "accept_type": "deny" },
+                "task_name": "Contains a One",
+                "task_id": "dfa-introduction-contains_one",
+                "description": "Write an automaton that reads a binary string (consisting only of '0's and '1's) and accepts if it contains at least one '1'. Hint: you can make nodes transition to themselves",
+                "test_cases": [
                     { "input": "", "accept_type": "deny" },
-                    { "input": "xyz", "accept_type": "deny" },
-                    { "input": "12345!@", "accept_type": "deny" },
-                    { "input": "python", "accept_type": "deny" },
-                    { "input" : "Hello", "accept_type":"deny"},
-                    { "input" : "Hello World", "accept_type":"deny"},
-                    { "input" : "Hola", "accept_type":"accept"},
-                    { "input" : "Bunny", "accept_type":"accept"},
-                    { "input": "apple", "accept_type": "accept" },
-                    { "input": "banana", "accept_type": "accept" },
-                    { "input": "coda", "accept_type": "accept" },
-                    { "input": "web", "accept_type": "accept" },
-                    { "input": "cat", "accept_type": "accept" },
-                    { "input": "a", "accept_type": "accept" },
-                    { "input": "b", "accept_type": "accept" }
+                    { "input": "0", "accept_type": "deny" },
+                    { "input": "00", "accept_type": "deny" },
+                    { "input": "00000000", "accept_type": "deny" },
+                    { "input": "0000000000000", "accept_type": "deny" },
+                    { "input": "1", "accept_type": "accept" },
+                    { "input": "01", "accept_type": "accept" },
+                    { "input": "10", "accept_type": "accept" },
+                    { "input": "11", "accept_type": "accept" },
+                    { "input": "00000001", "accept_type": "accept" },
+                    { "input": "10000000", "accept_type": "accept" },
+                    { "input": "00010000", "accept_type": "accept" },
+                    { "input": "01010101", "accept_type": "accept" },
+                    { "input": "11111111", "accept_type": "accept" },
+                    { "input": "00001000010000", "accept_type": "accept" }
                 ]
             },
             {
                 "task_name": "Even Steven",
                 "task_id": "dfa-introduction-even_steven",
-                "description": "Accept strings whose total length is an even number (0, 2, 4, 6, etc.), and deny strings with an odd length.",
+                "description": "Accept strings whose total length is an even number (0, 2, 4, 6, etc.), and deny strings with an odd length. Hint: use '^' to match any character that doesn't have a transition.",
                 "test_cases": [
                     { "input": "a", "accept_type": "deny" },
                     { "input": "1", "accept_type": "deny" },
@@ -62,6 +61,31 @@
                 ]
             },
             {
+                "task_name" : "First Program",
+                "task_id" : "dfa-introduction-first_progam",
+                "description" : "Write an automaton that is able to match any text that has an 'a' or has a 'b' in it. Hint: use comma seperated lists to allow multiple characters to follow a transition ie '1,2,3' no whitespace allowed.",
+                "test_cases" : [
+                    { "input": "dog", "accept_type": "deny" },
+                    { "input": "", "accept_type": "deny" },
+                    { "input": "xyz", "accept_type": "deny" },
+                    { "input": "12345!@", "accept_type": "deny" },
+                    { "input": "python", "accept_type": "deny" },
+                    { "input" : "Hello", "accept_type":"deny"},
+                    { "input" : "Hello World", "accept_type":"deny"},
+                    { "input" : "Hola", "accept_type":"accept"},
+                    { "input" : "bunny", "accept_type":"accept"},
+                    { "input": "apple", "accept_type": "accept" },
+                    { "input": "banana", "accept_type": "accept" },
+                    { "input": "coda", "accept_type": "accept" },
+                    { "input": "web", "accept_type": "accept" },
+                    { "input": "cat", "accept_type": "accept" },
+                    { "input": "a", "accept_type": "accept" },
+                    { "input": "b", "accept_type": "accept" },
+                    { "input": "angry", "accept_type": "accept" },
+                    { "input": "qwertyuiopasd", "accept_type": "accept" }
+                ]
+            },
+            {
                 "task_name": "No Consecutive Ones",
                 "task_id": "dfa-introduction-no_consecutive_ones",
                 "description": "Write an automaton that accepts any binary string ('0's and '1's) as long as it never contains two '1's in a row (the substring '11' is strictly forbidden). Empty strings are allowed.",
@@ -84,7 +108,7 @@
             {
                 "task_name": "A Good Laugh",
                 "task_id": "dfa-introduction-a_good_laugh",
-                "description": "Write an automaton that matches a valid laughing text. A valid laugh consists of alternating 'h' and 'a' characters (case-insensitive), starting with an 'H' or 'h'. It must contain at least two 'ha' syllables (e.g., 'haha', 'hahaha'). It is also allowed to end with a trailing 'h' (e.g., 'hahahah'). Deny strings that are too short (like 'ha'), start with an 'a', have consecutive identical letters (like 'hha' or 'haa'), or contain spaces/punctuation.",
+                "description": "Write an automaton that matches a valid laughing text. A valid laugh consists of alternating 'h' and 'a' characters (case-insensitive), starting with an 'H' or 'h'. It must contain at least two 'ha' syllables (e.g., 'haha', 'hahaha'). Deny strings that are too short (like 'ha'), start with an 'a'.",
                 "test_cases": [
                     { "input": "", "accept_type": "deny" },
                     { "input": "h", "accept_type": "deny" },
@@ -139,7 +163,7 @@
                     { "input": "xXx_xylophone_xXx", "accept_type": "accept" },
                     { "input": "Play the xylophone today", "accept_type": "accept" },
                     { "input": "nonxylophone", "accept_type": "accept" },
-                    { "input": "Xylophones", "accept_type": "accept" },
+                    { "input": "xylophones", "accept_type": "accept" },
                     { "input": "My xylophone is loud", "accept_type": "accept" }
                 ]
             }

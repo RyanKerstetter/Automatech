@@ -183,7 +183,7 @@ body {
     color: var(--text-main);
 }
 
-.instructions p {
+.task-description {
     font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-muted);
@@ -467,7 +467,7 @@ body {
     left: 14px;
     bottom: 12px;
     color: var(--text-muted);
-    font: 0.7rem var(--font-mono);
+    font: 1rem var(--font-mono);
     opacity: 0.8;
     pointer-events: none;
 }
@@ -616,6 +616,29 @@ body {
     flex-direction: column;
     gap: 14px;
     margin-top: 18px;
+}
+
+.editor-help {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.editor-help-header {
+    margin: 0 0 10px;
+    color: var(--text-main);
+    font: 600 0.9rem var(--font-ui);
+}
+
+.editor-help p {
+    margin: 0 0 10px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.editor-help p:last-child {
+    margin-bottom: 0;
 }
 
 .inspector-field,
