@@ -460,6 +460,8 @@ body {
     outline: none;
     cursor: default;
     touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .canvas-hint {

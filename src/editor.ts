@@ -124,9 +124,9 @@ export function set_execution_input(remaining: string, handled = ""): void {
         handled_element.textContent = handled;
         display.append(handled_element);
     }
-        const remaining_element = document.createElement("span");
-        remaining_element.className = "remaining-input";
-        remaining_element.textContent = remaining;
+    const remaining_element = document.createElement("span");
+    remaining_element.className = "remaining-input";
+    remaining_element.textContent = remaining;
     display.append(remaining_element);
 }
 
@@ -143,6 +143,12 @@ function create_editor_field(label: string, type: string, value: string, name: s
     field.className = "inspector-field";
     field.innerHTML = `<span>${label}</span><input name="${name}" type="${type}" value="${value}">`;
     return field;
+}
+
+function focus_inspector_field(name: string): void {
+    const input = document.querySelector<HTMLInputElement>(`.inspector-form input[name='${name}']`);
+    input?.focus();
+    if (input) input.setSelectionRange(input.value.length, input.value.length);
 }
 
 function current_solution(): EditorSolution {
@@ -205,7 +211,6 @@ function render_inspector(): void {
         elements.title.textContent = node.label;
         elements.form.append(
             create_editor_field("Label", "text", node.label, "label"),
-            create_editor_field("Node ID", "number", String(node.id), "id"),
         );
         const start_label = document.createElement("label");
         start_label.className = "check-field";
@@ -474,6 +479,7 @@ export function initialize_editor(task_id: string): void {
     }
     editor_initialized = true;
     elements.svg.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
         const target = event.target as Element;
         const node_group = target.closest<SVGGElement>(".graph-node");
         const edge_group = target.closest<SVGGElement>(".graph-connection");
@@ -491,6 +497,7 @@ export function initialize_editor(task_id: string): void {
                 const node = editor_node(id);
                 drag_state = node ? { kind: "node", id, x: point.x, y: point.y, node_x: node.x, node_y: node.y } : undefined;
                 render_editor();
+                focus_inspector_field("label");
                 (event.currentTarget as SVGSVGElement).setPointerCapture(event.pointerId);
                 return;
             }
@@ -498,6 +505,7 @@ export function initialize_editor(task_id: string): void {
         if (edge_group && editor_mode === "select") {
             editor_selection = { kind: "connection", id: Number(edge_group.dataset.connectionId) };
             render_editor();
+            focus_inspector_field("symbols");
             return;
         }
         if (editor_mode === "pan" || event.button === 1 || event.shiftKey) {
@@ -554,9 +562,7 @@ export function initialize_editor(task_id: string): void {
             connection_drag = undefined;
             render_editor();
             if (created_connection) {
-                const symbols_input = document.querySelector<HTMLInputElement>(".inspector-form input[name='symbols']");
-                symbols_input?.focus();
-                symbols_input?.select();
+                focus_inspector_field("symbols");
             }
         }
         drag_state = undefined;

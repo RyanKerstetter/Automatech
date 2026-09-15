@@ -24,24 +24,7 @@
                     { "input": "00001000010000", "accept_type": "accept" }
                 ]
             },
-            {
-                "task_name": "Even Steven",
-                "task_id": "dfa-introduction-even_steven",
-                "description": "Accept strings whose total length is an even number (0, 2, 4, 6, etc.), and deny strings with an odd length. Hint: use '^' to match any character that doesn't have a transition.",
-                "test_cases": [
-                    { "input": "a", "accept_type": "deny" },
-                    { "input": "1", "accept_type": "deny" },
-                    { "input": "odd", "accept_type": "deny" },
-                    { "input": "12345", "accept_type": "deny" },
-                    { "input": "seven!!", "accept_type": "deny" },
-                    { "input": "", "accept_type": "accept" },
-                    { "input": "hi", "accept_type": "accept" },
-                    { "input": "10", "accept_type": "accept" },
-                    { "input": "even", "accept_type": "accept" },
-                    { "input": "101010", "accept_type": "accept" },
-                    { "input": "two words!", "accept_type": "accept" }
-                ]
-            },
+            
             {
                 "task_name": "The Toll Booth",
                 "task_id": "dfa-introduction-toll_booth",
